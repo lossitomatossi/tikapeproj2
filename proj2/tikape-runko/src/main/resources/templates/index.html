@@ -1,0 +1,22 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Otsikko</title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <h1>Kysymyspankki</h1>
+        <p><a href="/kysymykset">Kysymykset:</a></p>
+        <p>Lisää kysymys:</p>
+        <form action="/lisaaKysymys" method="POST">
+            <span>kurssi:</span><input type="text" name="kurssi"/><br />
+            <span>aihe:</span><input type="text" name="aihe"/><br />
+            <span>kysymys:</span><input type="text" name="kysymysteksti"/>   
+            <input type="submit" value="lisää"/>
+        </form>
+        
+    </body>
+    
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tietty kysymys</title>
+    </head>
+        <body>
+            <h1 th:text="${kysymys.kysymysteksti}"></h1>
+            <span>Kurssi:</span>
+            <span th:text="${kysymys.kurssi}"></span><br />
+            <span>Aihe:</span>
+            <span th:text="${kysymys.aihe}"></span>
+            
+            
+            <h1>Vastaukset:</h1>
+            
+            <ul>
+                <li th:each="vastaus : ${xs}">
+                    <span>Vastaus: </span>
+                    <span th:text="${vastaus.vastaus}"></span><br />
+                    <span>True/False</span>
+                    <span th:text="${vastaus.oikein}"></span><br />
+                    <span>Vastauksen id:</span>
+                    <span th:text="${vastaus.id}"></span><br />
+                </li>
+            </ul>
+            
+            
+            <h1>Poista vastaus</h1>
+            <form action="/poistaVastaus" method="POST">
+            <span>Vastauksen id:</span><input type="text" name="id"/><br />   
+            <input type="submit" value="poista"/>
+        </form>
+        </body>
+</html>
